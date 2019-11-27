@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="pt-br" xmlns:th="http://thymeleaf.org" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
+          integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+
+</head>
+<body>
+
+<nav class="navbar mb-150 navbar-expand-lg navbar-dark bg-primary">
+
+    <div class="container mt-70">
+        <a href="" class="navbar-brand h2 mb-0">JCAVI WEB</a>
+        <button class="navbar-toggler" type="submit" data-toggle="collapse" data-target="#navbarSite">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="colapse navbar-collapse" id="navbarSite">
+
+            <ul class="navbar-nav ml-10">
+                <li class="nav-item dropdown">
+                    <a href="" class="nav-link dropdown-toggle" data-toggle="dropdown" id="navDrop">Categorias</a>
+                    <div class="dropdown-menu">
+                        <a href="#" class="dropdown-item" th:href="@{/categoria/adicionar}">Cadastrar</a>
+                        <a href="#" class="dropdown-item" th:href="@{/categoria}">Listar</a>
+                    </div>
+                </li>
+            </ul>
+
+            <ul class="navbar-nav ml-10">
+                <li class="nav-item dropdown">
+                    <a href="" class="nav-link dropdown-toggle" data-toggle="dropdown" id="navDrop">Clientes</a>
+                    <div class="dropdown-menu">
+                        <a href="#" class="dropdown-item" th:href="@{/cliente/adicionar}">Cadastrar</a>
+                        <a href="#" class="dropdown-item" th:href="@{/cliente}">Listar</a>
+                    </div>
+                </li>
+            </ul>
+
+            <ul class="navbar-nav ml-10">
+                <li class="nav-item dropdown">
+                    <a href="" class="nav-link dropdown-toggle" data-toggle="dropdown" id="navDrop">Produtos</a>
+                    <div class="dropdown-menu">
+                        <a href="#" class="dropdown-item" th:href="@{/produto/adicionar}">Cadastrar</a>
+                        <a href="#" class="dropdown-item" th:href="@{/produto}">Listar</a>
+                    </div>
+                </li>
+            </ul>
+
+            <ul class="navbar-nav ml-10">
+                <li class="nav-item dropdown">
+                    <a href="" class="nav-link dropdown-toggle" data-toggle="dropdown" id="navDrop">Venda de balcão</a>
+                    <div class="dropdown-menu">
+                        <a href="#" class="dropdown-item" th:href="@{/venda/adicionar}">Cadastrar</a>
+                        <a href="#" class="dropdown-item" th:href="@{/venda}">Listar</a>
+                    </div>
+                </li>
+            </ul>
+
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item dropdown">
+                    <a href="" class="nav-link dropdown-toggle" data-toggle="dropdown" id="navDrop">Social</a>
+                    <div class="dropdown-menu">
+                        <a href="#" class="dropdown-item">facebook</a>
+                        <a href="#" class="dropdown-item">Twitter</a>
+                        <a href="#" class="dropdown-item">Instagram</a>
+                        <a href="#" class="dropdown-item">Linkedin</a>
+                    </div>
+                </li>
+            </ul>
+
+            <form action="" class="form-inline">
+                <input type="search" class="form-control ml-4 mr-2" placeholder="Buscar...">
+                <button type="submit" class="btn btn-dark">Ok</button>
+            </form>
+        </div>
+    </div>
+
+</nav>
+
+</body>
+</html>
