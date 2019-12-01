@@ -2,7 +2,7 @@ package br.com.projetovendas.entity;
 
 import javax.persistence.*;
 import java.io.Serializable;
-import java.util.Date;
+import java.time.LocalDateTime;
 import java.util.HashSet;
 import java.util.Set;
 
@@ -15,7 +15,8 @@ public class Pedido implements Serializable {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
-    private Date dataPedido;
+
+    private LocalDateTime dataPedido;
 
     @ManyToOne
     @JoinColumn(name = "id_cliente")
@@ -35,11 +36,11 @@ public class Pedido implements Serializable {
         this.id = id;
     }
 
-    public Date getDataPedido() {
+    public LocalDateTime getDataPedido() {
         return dataPedido;
     }
 
-    public void setDataPedido(Date dataPedido) {
+    public void setDataPedido(LocalDateTime dataPedido) {
         this.dataPedido = dataPedido;
     }
 

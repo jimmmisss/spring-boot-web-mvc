@@ -1,0 +1,20 @@
+insert into categoria(id, name) values (1, 'TECNOLOGIA')
+insert into categoria(id, name) values (2, 'ARQUITETURA DE SOLUÇÕES')
+insert into categoria(id, name) values (3, 'GERENCIAMENTO DE PROJETOS')
+insert into categoria(id, name) values (4, 'ENGENHARIA DE SOFTWARE')
+insert into categoria(id, name) values (5, 'DATA CIENCE')
+
+insert into produto(id, logo, nome, quantidade, valor) values (1, 'legalizzr.png', 'Camiseta - Darth Vader', 1, 80)
+insert into produto(id, logo, nome, quantidade, valor) values (2, 'legalizzr.png', 'Macbook Pro', 1, 12000)
+insert into produto(id, logo, nome, quantidade, valor) values (3, 'legalizzr.png', 'Teclado Mecânico', 1, 450)
+insert into produto(id, logo, nome, quantidade, valor) values (4, 'legalizzr.png', 'iMac Tela de Retina', 1, 22000)
+insert into produto(id, logo, nome, quantidade, valor) values (5, 'legalizzr.png', 'IPhone 11 PRO', 1, 6000)
+
+insert into produto_categoria(id_categoria, id_produto) values (1, 1)
+insert into produto_categoria(id_categoria, id_produto) values (1, 2)
+
+insert into cliente(id, idade, nome, email, profissao, sobrenome, telefone) values (1, 37, 'Wesley', 'familia@legalizzr.com.br', 'Programador Java', 'Pereira', '98999437427')
+insert into cliente(id, idade, nome, email, profissao, sobrenome, telefone) values (2, 20, 'Isadora', 'familia@legalizzr.com.br', 'CEO', 'Pereira', '98999437427')
+insert into cliente(id, idade, nome, email, profissao, sobrenome, telefone) values (3, 27, 'Fadia', 'familia@legalizzr.com.br', 'Personal Treinee', 'Pereira', '98999437427')
+insert into cliente(id, idade, nome, email, profissao, sobrenome, telefone) values (4, 49, 'Cleisa', 'familia@legalizzr.com.br', 'Enfermeira', 'Pereira', '98999437427')
+insert into cliente(id, idade, nome, email, profissao, sobrenome, telefone) values (5, 37, 'Conceição', 'familia@legalizzr.com.br', 'Bancária', 'Pereira', '98999437427')

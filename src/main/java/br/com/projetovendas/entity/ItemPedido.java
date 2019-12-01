@@ -17,6 +17,7 @@ public class ItemPedido {
     }
 
     public ItemPedido(Produto produto, Pedido pedido, Double preco, Integer qtde, Double desconto) {
+        super();
         id.setProduto(produto);
         id.setPedido(pedido);
         this.preco = preco;
