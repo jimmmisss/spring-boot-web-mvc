@@ -1,18 +1,18 @@
 package br.com.projetovendas.entity;
 
+import org.springframework.security.core.GrantedAuthority;
+import org.springframework.security.core.userdetails.UserDetails;
+
 import javax.persistence.*;
 import javax.validation.constraints.Email;
 import javax.validation.constraints.Min;
 import javax.validation.constraints.NotEmpty;
 import java.io.Serializable;
-import java.util.ArrayList;
-import java.util.HashSet;
-import java.util.List;
-import java.util.Set;
+import java.util.*;
 
 @Entity
 @Table(name = "cliente")
-public class Cliente implements Serializable {
+public class Cliente implements Serializable, UserDetails {
 
     private static final long serialVersionUID = 1L;
 
@@ -34,6 +34,8 @@ public class Cliente implements Serializable {
     @Email(message = "email tem que ser válido")
     private String email;
 
+    private String senha;
+
     private String telefone;
 
     @OneToMany(mappedBy = "cliente", cascade = CascadeType.ALL)
@@ -41,6 +43,11 @@ public class Cliente implements Serializable {
 
     @OneToMany(mappedBy = "cliente")
     private Set<Pedido> pedidos = new HashSet<>();
+
+    @ManyToMany(fetch=FetchType.EAGER, cascade = {
+            CascadeType.PERSIST,
+            CascadeType.MERGE})
+    private List<Role> roles = new ArrayList<Role>();
 
     public Cliente() {
     }
@@ -93,6 +100,14 @@ public class Cliente implements Serializable {
         this.email = email;
     }
 
+    public String getSenha() {
+        return senha;
+    }
+
+    public void setSenha(String senha) {
+        this.senha = senha;
+    }
+
     public String getTelefone() {
         return telefone;
     }
@@ -115,5 +130,48 @@ public class Cliente implements Serializable {
 
     public void setPedidos(Set<Pedido> pedidos) {
         this.pedidos = pedidos;
+    }
+
+    public List<Role> getRoles() {
+        return roles;
+    }
+
+    public void setRoles(List<Role> roles) {
+        this.roles = roles;
+    }
+
+    @Override
+    public Collection<? extends GrantedAuthority> getAuthorities() {
+        return this.roles;
+    }
+
+    @Override
+    public String getPassword() {
+        return this.senha;
+    }
+
+    @Override
+    public String getUsername() {
+        return this.email;
+    }
+
+    @Override
+    public boolean isAccountNonExpired() {
+        return true;
+    }
+
+    @Override
+    public boolean isAccountNonLocked() {
+        return true;
+    }
+
+    @Override
+    public boolean isCredentialsNonExpired() {
+        return true;
+    }
+
+    @Override
+    public boolean isEnabled() {
+        return true;
     }
 }
