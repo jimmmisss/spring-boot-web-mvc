@@ -25,8 +25,7 @@ public class ClienteService {
     }
 
     public Cliente findByEmail(String email) {
-        return Optional.of(clienteRepository.findByEmail(email)).orElseThrow(()
-                -> new ObjectNotFoundException("Busca de cliente por email não encontrado", Cliente.class.getName()));
+        return clienteRepository.findByEmail(email);
     }
 
     public List<Cliente> findAll() {

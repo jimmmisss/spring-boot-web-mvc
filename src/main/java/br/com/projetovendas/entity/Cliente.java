@@ -32,6 +32,7 @@ public class Cliente implements Serializable, UserDetails {
 
     @NotEmpty(message = "Email é obrigatório")
     @Email(message = "email tem que ser válido")
+    @Column(unique = true)
     private String email;
 
     private String senha;
@@ -44,10 +45,11 @@ public class Cliente implements Serializable, UserDetails {
     @OneToMany(mappedBy = "cliente")
     private Set<Pedido> pedidos = new HashSet<>();
 
-    @ManyToMany(fetch=FetchType.EAGER, cascade = {
-            CascadeType.PERSIST,
-            CascadeType.MERGE})
-    private List<Role> roles = new ArrayList<Role>();
+    @ManyToMany
+    @JoinTable(name = "usuario_role",
+            joinColumns = @JoinColumn(name = "id_usuario"),
+            inverseJoinColumns = @JoinColumn(name = "id_role"))
+    private List<Role> roles;
 
     public Cliente() {
     }

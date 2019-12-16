@@ -2,10 +2,8 @@ package br.com.projetovendas.entity;
 
 import org.springframework.security.core.GrantedAuthority;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.persistence.*;
+import java.util.List;
 
 @Entity(name = "role")
 public class Role implements GrantedAuthority {
@@ -15,8 +13,10 @@ public class Role implements GrantedAuthority {
 	@Id
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
 	private int id;
-	
 	private String nome;
+
+	@ManyToMany(mappedBy = "roles")
+	private List<Cliente> clientes;
 
 	public String getNome() {
 		return nome;
@@ -32,6 +32,14 @@ public class Role implements GrantedAuthority {
 
 	public void setId(int id) {
 		this.id = id;
+	}
+
+	public List<Cliente> getClientes() {
+		return clientes;
+	}
+
+	public void setClientes(List<Cliente> clientes) {
+		this.clientes = clientes;
 	}
 
 	@Override
