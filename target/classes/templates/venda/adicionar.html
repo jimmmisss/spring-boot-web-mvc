@@ -27,7 +27,7 @@
 </div>
 
 <div class="container col-8" style="margin-bottom: 20px">
-    <form th:action="@{login}" method="post">
+    <form th:object="${pedido}" th:action="@{/venda/adicionar}" method="post">
 
         <div class="form-group row">
             <div class="alert alert-danger" th:if="${#fields.hasAnyErrors()}">
