@@ -67,12 +67,7 @@
                 </form>
             </ul>
 
-            <span th:inline="text">[[${#httpServletRequest.remoteUser}]]!</span>
-
-            <form action="" class="form-inline">
-                <input type="search" class="form-control ml-4 mr-2" placeholder="Buscar...">
-                <button type="submit" class="btn btn-dark">Ok</button>
-            </form>
+            <span th:inline="text">[[${#httpServletRequest.remoteUser}]]</span>
 
         </div>
     </div>

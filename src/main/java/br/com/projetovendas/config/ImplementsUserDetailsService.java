@@ -24,8 +24,8 @@ public class ImplementsUserDetailsService implements UserDetailsService {
     }
 
     @Override
-    public UserDetails loadUserByUsername(String login) throws UsernameNotFoundException {
-        Cliente cliente = clienteService.findByEmail(login);
+    public UserDetails loadUserByUsername(String email) throws UsernameNotFoundException {
+        Cliente cliente = clienteService.findByEmail(email);
         if (Objects.isNull(cliente)) {
             throw new UsernameNotFoundException("Cliente não encontrado");
         }

@@ -45,7 +45,6 @@
                 <select class="form-control selectpicker" data-live-search="true">
                     <option th:each="cliente : ${clientes}"
                             th:value="${cliente.id}"
-                            data-tokens=
                             th:text="${cliente.nome}"></option>
                 </select>
             </div>
@@ -68,6 +67,39 @@
                 </tr>
                 </thead>
                 <tbody>
+                <tr>
+                    <td width="400px">
+                        <select class="form-control selectpicker" data-live-search="true" title="Escolha um produto">
+                            <option th:each="produto : ${produtos}"
+                                    th:value="${produto.id}"
+                                    th:text="${produto.nome}" class="prod"></option>
+                        </select>
+                    </td>
+                    <td><input type="text" class="col-xs-2 form-control" name="razao[]" placeholder="Quantidade"></td>
+                    <td><input type="text" class="col-xs-2 form-control" name="desconto[]" placeholder="Desconto"></td>
+                </tr>
+                <tr>
+                    <td width="400px">
+                        <select class="form-control selectpicker" data-live-search="true" title="Escolha um produto">
+                            <option th:each="produto : ${produtos}"
+                                    th:value="${produto.id}"
+                                    th:text="${produto.nome}" class="prod"></option>
+                        </select>
+                    </td>
+                    <td><input type="text" class="col-xs-2 form-control" name="razao[]" placeholder="Quantidade"></td>
+                    <td><input type="text" class="col-xs-2 form-control" name="desconto[]" placeholder="Desconto"></td>
+                </tr>
+                <tr>
+                    <td width="400px">
+                        <select class="form-control selectpicker" data-live-search="true" title="Escolha um produto">
+                            <option th:each="produto : ${produtos}"
+                                    th:value="${produto.id}"
+                                    th:text="${produto.nome}" class="prod"></option>
+                        </select>
+                    </td>
+                    <td><input type="text" class="col-xs-2 form-control" name="razao[]" placeholder="Quantidade"></td>
+                    <td><input type="text" class="col-xs-2 form-control" name="desconto[]" placeholder="Desconto"></td>
+                </tr>
                 <tr>
                     <td width="400px">
                         <select class="form-control selectpicker" data-live-search="true" title="Escolha um produto">

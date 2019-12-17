@@ -7,12 +7,11 @@ import javax.persistence.*;
 import javax.validation.constraints.Email;
 import javax.validation.constraints.Min;
 import javax.validation.constraints.NotEmpty;
-import java.io.Serializable;
 import java.util.*;
 
 @Entity
 @Table(name = "cliente")
-public class Cliente implements Serializable, UserDetails {
+public class Cliente implements UserDetails {
 
     private static final long serialVersionUID = 1L;
 
@@ -22,21 +21,17 @@ public class Cliente implements Serializable, UserDetails {
 
     @NotEmpty(message = "Campo nome não pode ser vazio")
     private String nome;
-
     private String sobrenome;
 
     @Min(value = 16, message = "idade mínima tem que ser 16 anos")
     private int idade;
-
     private String profissao;
 
     @NotEmpty(message = "Email é obrigatório")
     @Email(message = "email tem que ser válido")
     @Column(unique = true)
     private String email;
-
     private String senha;
-
     private String telefone;
 
     @OneToMany(mappedBy = "cliente", cascade = CascadeType.ALL)
